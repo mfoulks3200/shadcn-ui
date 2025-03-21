@@ -3,6 +3,7 @@ name: Code check
 on:
   pull_request:
     branches: ["*"]
+  workflow_dispatch:
 
 jobs:
   lint:
