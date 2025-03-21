@@ -93,6 +93,15 @@ jobs:
         with:
           node-version: 20
 
+      - name: Initialize TSRun Profiler
+        id: hello
+        uses: TS-Run/gh-actions-agent@HEAD
+        with:
+          who-to-greet: 'Mona the Octocat'
+        
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         id: pnpm-install
